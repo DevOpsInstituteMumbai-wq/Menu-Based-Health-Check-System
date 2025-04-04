@@ -149,6 +149,66 @@ Also helpful for debugging if mail is not received.
 - If lost, you'll need to generate a new one.
 - If you can't find the **"App passwords"** option, make sure **2-Step Verification** is enabled.
 
+
+
+# ✅ Postfix Shutdown & Cleanup Checklist
+
+Use this guide to stop, disable, and optionally remove your Postfix mail setup after completing your assignment.
+
+---
+
+## 🔁 1. Stop the Postfix service
+
+```bash
+sudo systemctl stop postfix
+```
+
+---
+
+## 🚫 2. Disable Postfix from starting on boot
+
+```bash
+sudo systemctl disable postfix
+```
+
+---
+
+## 🧹 3. (Optional) Remove authentication and config files  
+Only do this if you are sure you won’t need the mail setup again:
+
+```bash
+sudo rm -f /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+sudo rm -f /etc/mailname
+```
+
+---
+
+## 🗑️ 4. (Optional) Uninstall Postfix completely  
+Reclaim system resources and remove all Postfix-related files:
+
+```bash
+sudo apt remove --purge postfix -y
+sudo apt autoremove --purge -y
+```
+
+---
+
+## 🔍 5. Confirm Postfix is no longer running
+
+Run the following to check:
+
+```bash
+ps aux | grep postfix
+```
+
+You should only see the `grep` line or nothing relevant.
+
+---
+
+✅ **Done!** Your system is now clean and Postfix-free.
+
+
+
 ## Contributing
 Feel free to fork this repository, enhance the script, and submit pull requests!
 
