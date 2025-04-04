@@ -21,12 +21,11 @@ Ensure your system meets the following requirements:
 To install `mailx`, run:
 ```sh
 sudo apt install mailutils  # Ubuntu/Debian
-# (select 1 when asked for configuration - No Configuration)
-# You can always reconfigure later using:
-sudo dpkg-reconfigure postfix
 
 sudo yum install mailx      # CentOS/RHEL
 ```
+> (select 1 when asked for configuration - No Configuration)
+> You can always reconfigure later using: (`sudo dpkg-reconfigure postfix`)
 
 ## Installation
 1. Clone this repository:
