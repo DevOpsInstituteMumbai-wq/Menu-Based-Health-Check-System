@@ -44,7 +44,7 @@ EMAIL="your-email@example.com"
 ## Usage
 Run the script using:
 ```sh
-./system_health.sh
+./menu.sh
 ```
 A menu will appear:
 ```
